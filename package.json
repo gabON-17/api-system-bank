@@ -1,0 +1,26 @@
+{
+  "name": "system_bank",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Gabriel Henrique",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start:dev": "nodemon dist/server.js",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

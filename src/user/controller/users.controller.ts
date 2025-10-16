@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { CreateUserDto } from "../dtos/createUser.dto";
 import { UsersService } from "../service/users.service";
 import { ResponseService } from "../../common/types/response.type";
-import { validateUser } from "../../common/validation/users.validation";
 
 export class UsersController {
   usersService: UsersService;
@@ -43,9 +42,5 @@ export class UsersController {
       res
     );
     res.status(dataService.statusCode).json(dataService.message);
-  }
-
-  test(req: Request, res: Response) {
-    res.json(this.usersService.test(req.body));
   }
 }

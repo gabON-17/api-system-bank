@@ -70,11 +70,9 @@ export class UsersService {
         (value) => value === user
       );
       this.usersRepository.users.splice(indexUser, 1);
-      // res.sendStatus(204);
       return { message: "Usuário deletado", statusCode: 204 };
     }
 
-    // res.sendStatus(403);
     return { message: "Error ao deletar o usuário", statusCode: 403 };
   }
 }

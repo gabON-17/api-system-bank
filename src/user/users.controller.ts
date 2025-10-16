@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
-import { CreateUserDto } from "../dtos/createUser.dto";
-import { UsersService } from "../service/users.service";
-import { ResponseService } from "../../common/types/response.type";
-import { validateUser } from "../../common/validation/users.validation";
+import { UsersService } from "./users.service";
+import { ResponseService } from "../common/types/response.type";
 
 export class UsersController {
   usersService: UsersService;

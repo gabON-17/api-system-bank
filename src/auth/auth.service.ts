@@ -1,7 +1,7 @@
-import { UserEntity } from "../../common/entitys/user.entity";
-import { ResponseService } from "../../common/types/response.type";
-import { repositoryUsers, UsersRepository } from "../../user/model/users.model";
-import { LoginDto } from "../dto/login.dto";
+import { UserEntity } from "../common/entitys/user.entity";
+import { ResponseService } from "../common/types/response.type";
+import { repositoryUsers, UsersRepository } from "../user/model/users.model";
+import { LoginDto } from "./dto/login.dto";
 
 export class AuthService {
   usersRepository: UsersRepository;

@@ -42,8 +42,4 @@ export class UsersController {
     );
     res.status(dataService.statusCode).json(dataService.message);
   }
-
-  test(req: Request, res: Response) {
-    res.json(this.usersService.test(req.body));
-  }
 }

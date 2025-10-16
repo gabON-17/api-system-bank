@@ -1,4 +1,4 @@
-import { BankService } from "../service/bank.service";
+import { BankService } from "./bank.service";
 
 class BankController {
   private bankService: BankService;

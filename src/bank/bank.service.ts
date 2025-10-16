@@ -8,7 +8,7 @@ export class BankService {
     this.usersRepository = repositoryUsers;
   }
 
-  create(createAccountDto: CreateAccountDto) {
+  createAccount(createAccountDto: CreateAccountDto) {
     const account: AccountEntity | undefined = undefined;
   }
 }

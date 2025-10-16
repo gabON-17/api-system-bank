@@ -2,15 +2,15 @@ import express from "express";
 import { UsersController } from "../users.controller";
 import { MiddlewareValidationUsersDTO } from "../../common/middleware/validationDtos/users.middleware";
 
-export const routes = express.Router();
+export const routesUsers = express.Router();
 const middlewareUsers = new MiddlewareValidationUsersDTO();
 const usersController: UsersController = new UsersController();
 
-routes.get("/:id", usersController.findOne.bind(usersController));
-routes.get("/", usersController.findAll.bind(usersController));
-routes.post(
+routesUsers.get("/:id", usersController.findOne.bind(usersController));
+routesUsers.get("/", usersController.findAll.bind(usersController));
+routesUsers.post(
   "/",
   middlewareUsers.verifyDtoCreate.bind(middlewareUsers),
   usersController.create.bind(usersController)
 );
-routes.delete("/:id", usersController.dellUser.bind(usersController));
+routesUsers.delete("/:id", usersController.dellUser.bind(usersController));

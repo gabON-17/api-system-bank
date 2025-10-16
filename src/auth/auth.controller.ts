@@ -1,12 +1,14 @@
-import { LoginDto } from "./dto/login.dto";
+import { ResponseService } from "../common/types/response.type";
 import { AuthService } from "./auth.service";
+import { Request, Response } from "express";
 
-class AuthController {
+export class AuthController {
   private authService: AuthService;
   constructor() {
     this.authService = new AuthService();
   }
-  login(loginDto: LoginDto) {
-    this.authService.login(loginDto);
+  login(req: Request, res: Response) {
+    const resService: ResponseService = this.authService.login(req.body);
+    res.status(resService.statusCode).json({ ...resService });
   }
 }

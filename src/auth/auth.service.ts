@@ -1,15 +1,15 @@
+import jwt from "jsonwebtoken";
 import { UserEntity } from "../common/entitys/user.entity";
 import { ResponseService } from "../common/types/response.type";
 import { repositoryUsers, UsersRepository } from "../user/model/users.model";
 import { LoginDto } from "./dto/login.dto";
+import { AuthJwt } from "./jwt/auth.jwt";
 
 export class AuthService {
   usersRepository: UsersRepository;
-  authService: AuthService;
-  userON: UserEntity | undefined;
+  authJwt: AuthJwt;
   constructor() {
-    this.userON = undefined;
-    this.authService = new AuthService();
+    this.authJwt = new AuthJwt();
     this.usersRepository = repositoryUsers;
   }
 
@@ -19,9 +19,9 @@ export class AuthService {
         value.email === loginDto.email && value.password === loginDto.password
     );
 
-    if (!user) return { message: "Não foi possível logar", statusCode: 200 };
+    if (!user) return { message: "Não foi possível logar", statusCode: 400 };
 
-    this.userON = user;
-    return { message: "Usuário logado", statusCode: 200 };
+    const token = this.authJwt.generateToken(user.name, user.id);
+    return { message: "Usuário logado", statusCode: 200, data: token };
   }
 }

@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { BankService } from "./bank.service";
 
 class BankController {
@@ -5,4 +6,6 @@ class BankController {
   constructor() {
     this.bankService = new BankService();
   }
+
+  createAccount(req: Request, res: Response) {}
 }

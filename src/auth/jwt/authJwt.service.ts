@@ -1,19 +1,10 @@
-import jwt, {
-  JsonWebTokenError,
-  Jwt,
-  JwtHeader,
-  JwtPayload,
-} from "jsonwebtoken";
-import { env } from "process";
-import { ResponseService } from "../../common/types/response.type";
+import jwt, { JsonWebTokenError, JwtPayload, SignOptions } from "jsonwebtoken";
 
 export class AuthJwt {
   generateToken(userName: string, userId: number): string {
     const payload: JwtPayload = { userName, userId };
 
-    const token = jwt.sign(payload, env.JWT_SECRET!, {
-      expiresIn: process.env.JWT_EXPIRES,
-    });
+    const token = jwt.sign(payload, process.env.JWT_SECRET as string);
 
     return token;
   }

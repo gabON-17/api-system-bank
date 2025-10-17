@@ -1,7 +1,7 @@
-import { ResponseService } from "../../common/types/response.type.js";
-import { CreateUserDto } from "../dtos/createUser.dto.js";
-import { UserEntity } from "../../common/entitys/user.entity.js";
-import { repositoryUsers, UsersRepository } from "../model/users.model.js";
+import { ResponseService } from "../common/types/response.type.js";
+import { CreateUserDto } from "./dtos/createUser.dto.js";
+import { UserEntity } from "../common/entitys/user.entity.js";
+import { repositoryUsers, UsersRepository } from "./model/users.model.js";
 import { Response } from "express";
 
 export class UsersService {

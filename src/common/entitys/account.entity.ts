@@ -5,4 +5,6 @@ export class AccountEntity {
   numberAccount!: number;
   type!: "corrente" | "poupança";
   money!: number;
+  createAt!: Date;
+  updateAt!: Date;
 }

@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { UsersService } from "./users.service";
-import { ResponseService } from "../common/types/response.type";
+import { ResponseService } from "../common/types/response";
 
 export class UsersController {
-  usersService: UsersService;
+  private readonly usersService: UsersService;
   constructor() {
     this.usersService = new UsersService();
   }

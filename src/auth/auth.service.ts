@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import { UserEntity } from "../common/entitys/user.entity";
-import { ResponseService } from "../common/types/response.type";
+import { ResponseService } from "../common/types/response";
 import { repositoryUsers, UsersRepository } from "../user/model/users.model";
 import { LoginDto } from "./dto/login.dto";
-import { AuthJwt } from "./jwt/authJwt.service";
+import { AuthJwt } from "./jwt/auth.jwt";
 
 export class AuthService {
   usersRepository: UsersRepository;

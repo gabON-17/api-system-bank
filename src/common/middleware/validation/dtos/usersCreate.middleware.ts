@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { CreateUserDto } from "../../../user/dtos/createUser.dto";
+import { CreateUserDto } from "../../../../user/dtos/createUser.dto";
 import { isEmail, isNumber, isString, isStrongPassword } from "class-validator";
 
 export class MiddlewareValidationUsersDTO {

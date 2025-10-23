@@ -1,11 +1,11 @@
-import { ResponseService } from "../common/types/response.type.js";
+import { ResponseService } from "../common/types/response.js";
 import { CreateUserDto } from "./dtos/createUser.dto.js";
 import { UserEntity } from "../common/entitys/user.entity.js";
 import { repositoryUsers, UsersRepository } from "./model/users.model.js";
 import { Response } from "express";
 
 export class UsersService {
-  usersRepository: UsersRepository;
+  private readonly usersRepository: UsersRepository;
   constructor() {
     this.usersRepository = repositoryUsers;
   }
@@ -17,7 +17,7 @@ export class UsersService {
       email: createUserDto.email,
       password: createUserDto.password,
       age: createUserDto.age,
-      account: null,
+      account: undefined,
       createAt: new Date(),
       updateAt: new Date(),
     };

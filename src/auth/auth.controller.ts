@@ -1,4 +1,4 @@
-import { ResponseService } from "../common/types/response.type";
+import { ResponseService } from "../common/types/response";
 import { AuthService } from "./auth.service";
 import { Request, Response } from "express";
 

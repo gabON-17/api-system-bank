@@ -1,3 +1,6 @@
+import { UserEntity } from "../../common/entitys/user.entity";
+
 export class CreateAccountDto {
-  type!: "Poupança" | "Corrente";
+  type!: "poupança" | "corrente";
+  accountoOwner?: UserEntity;
 }

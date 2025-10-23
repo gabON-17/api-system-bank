@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { AuthJwt } from "../../../auth/jwt/authJwt.service";
+import { AuthJwt } from "../../../auth/jwt/auth.jwt";
 
 export class MiddlewareJwtToken {
-  authJwt: AuthJwt;
+  private readonly authJwt: AuthJwt;
   constructor() {
     this.authJwt = new AuthJwt();
   }
@@ -17,6 +17,7 @@ export class MiddlewareJwtToken {
       return;
     }
 
+    req.body = { ...req.body, payload: this.authJwt.getPayload(token) };
     next();
   }
 }
